@@ -12,7 +12,7 @@ public class Rope {
         private final Tree left;
         private final Tree right;
 
-        private Node(Node left, int length, Node right) {
+        private Node(Tree left, int length, Tree right) {
             this.left = left;
             this.right = right;
             this.length = length;
@@ -49,7 +49,14 @@ public class Rope {
     /* *** END: DO NOT TOUCH THIS PART *** */
 
     Rope(String initial) {
+        if (initial == null) {
+            throw new IllegalArgumentException();
+        }
         root = new Leaf(initial, initial.length());
+    }
+
+    private Rope(Tree root) {
+        this.root = root;
     }
 
     /**
@@ -77,7 +84,7 @@ public class Rope {
      *
      * @returns the height of the tree
      */
-    public int rank() {
+    int rank() {
         throw new NotImplementedYetException();
     }
 
@@ -86,7 +93,7 @@ public class Rope {
      *
      * @returns a new rope with one rope after the other
      */
-    public Rope concat(Rope other) {
+    Rope concat(Rope other) {
         throw new NotImplementedYetException();
     }
 
