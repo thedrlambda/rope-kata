@@ -157,7 +157,7 @@ public class Rope {
      *
      * @returns the first occurrence of a character in the rope
      */
-    public char indexOf(char c) {
+    public int indexOf(char c) {
         throw new NotImplementedYetException();
     }
 
